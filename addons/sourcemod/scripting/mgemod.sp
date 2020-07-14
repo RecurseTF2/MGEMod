@@ -1683,6 +1683,11 @@ HideHud(client)
 // ====[ QUEUE ]==================================================== 
 RemoveFromQueue(client, arena_index, bool:calcstats=false, bool:specfix=false)
 {
+	if (arena_index == 0)
+	{
+		return;
+	}
+
 	new player_slot = g_iPlayerSlot[client];
 	g_iPlayerArena[client] = 0;
 	g_iPlayerSlot[client] = 0;
